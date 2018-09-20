@@ -1,3 +1,4 @@
+
 /* prog1_1, 第一個C程式碼 */ 
 #include <stdio.h>
 #include <stdlib.h>
