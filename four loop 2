@@ -1,0 +1,102 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+double power_for(double, int);	
+
+int main(void)
+{
+   double x=2;		
+   int n=5;		
+  
+   printf("%lf的%dΩ次方是%lf\n",x,n,power_for(x,n)); 
+
+   system("pause");
+   return 0;
+}
+
+double power_for(double base, int n) 
+{
+   int i;
+   double pow=1.0;
+   for(i=1;i<=n;i++)		
+      pow=pow*base;
+   return pow;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+double while2(double, int);	
+
+int main(void)
+{
+   double x=2;		
+   int n=5;		
+  
+   printf("%lf的%d次方是%lf\n",x,n,while2(x,n)); 
+
+   system("pause");
+   return 0;
+}
+
+double while2(double base, int n) 
+{
+   int i=1;
+   double pow=1.0;
+ 
+   while(i<=n)
+ {
+    i++;	
+    pow=pow*base;
+	  
+}
+   return pow;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+double dowhile(double, int);	
+
+int main(void)
+{
+   double x=2;		
+   int n=5;		
+  
+   printf("%lf的%d次方是%lf\n",x,n,dowhile(x,n)); 
+
+   system("pause");
+   return 0;
+}
+
+double dowhile(double base, int n) 
+{
+   int i=1;
+   double pow=1.0;  
+ do 
+ {
+    i++;	
+    pow=pow*base;
+    } 
+while(i<=n);
+   return pow;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int power(int n1, int n2);
+int main()
+{
+    int base=2, n=5, result;
+    result = power(base, n);
+    printf("%d**%d = %d", base, n, result);
+    return 0;
+}
+int power(int base, int n)
+{
+    if (n != 0)
+        return (base*power(base, n-1));
+    else
+     return 1;
+}
