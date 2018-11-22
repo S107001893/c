@@ -1,0 +1,67 @@
+#include <stdio.h>
+
+int main() 
+{
+
+    int total=1 , i ;
+    for ( i = 1; i <= 5; i++ )
+    {  
+       if ( i <= 5 )
+       total *= i;
+    }
+    printf("總和為: %d\n", total);
+    return 0 ;
+}
+
+#include <stdio.h>
+#include <stdlib.h> 
+int main() 
+{
+
+    int sum=0 , i=1 ;
+    while (sum<=5)
+    {  
+       sum+=1 ;
+       
+       if ( sum<=5 ) 
+       i *= sum;
+    }
+    printf("總和為: %d\n", i);
+    return 0 ;
+}
+#include <stdio.h>
+#include <stdlib.h> 
+int main() 
+{
+
+    int n , i=1 ,sum=0;
+    printf("請輸入數值");/*5*/ 
+    scanf("%d",&n);
+    do
+    {
+	   sum += 1;
+       if ( sum<=n )
+       i *= sum;
+    }
+    while(sum<=n);
+    printf("1*2*3...%d=%d",n,i);
+    return 0 ;
+}
+
+#include <stdio.h>
+int aa(int n);
+
+int main()
+{
+   int n=5;
+ 
+   printf(" %d 階層 = %ld", n, aa(n));
+   return 0;
+}
+int aa(int n)
+{
+   if (n >= 1)
+       return n*aa(n-1);
+   else
+       return 1;
+}
