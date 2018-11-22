@@ -1,0 +1,89 @@
+#include <stdio.h>
+int main()
+{
+    int i, n, t1 = 0, t2 = 1, down;
+
+    printf("輸入數字: ");
+    scanf("%d", &n);
+
+    printf("費式數列: ");
+
+    for (i = 1; i <= n; i+=1)
+    {
+        printf("%d,", t1);
+        down = t1 + t2;
+        t1 = t2;
+        t2 = down;
+    }
+    return 0;
+}
+
+#include <stdio.h>
+int main()
+{
+    int i=1, n, t1 = 0, t2 = 1, down;
+
+    printf("輸入數字: ");
+    scanf("%d", &n);
+
+    printf("費式數列: ");
+    while(i<=n)
+    
+    {
+        printf("%d,", t1);
+        i+=1;
+        down = t1 + t2;
+        t1 = t2;
+        t2 = down;
+    }
+    return 0;
+}
+
+#include <stdio.h>
+int main()
+{
+    int i=1, n, t1 = 0, t2 = 1, down;
+
+    printf("輸入數字: ");
+    scanf("%d", &n);
+
+    printf("費式數列: ");
+    
+    do
+    {
+        printf("%d,", t1);
+        i+=1;
+        down = t1 + t2;
+        t1 = t2;
+        t2 = down;
+    }
+	while(i<=n);
+    return 0;
+}
+
+#include<stdio.h>
+ 
+int down(int);
+ 
+int main()
+{
+   int n, i = 0, c;
+   printf("輸入數字: ");
+   scanf("%d",&n);
+   printf("費式數列\n");
+   for ( c = 1 ; c <= n ; c++ )
+   {
+      printf("%d\n", down(i));
+      i++; 
+   }
+   return 0;
+}
+int down(int n)
+{
+   if ( n == 0 )
+      return 0;
+   else if ( n == 1 )
+      return 1;
+   else
+      return ( down(n-1) + down(n-2) );
+} 
