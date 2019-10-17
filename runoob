@@ -3,3 +3,39 @@ root@kali:~# python2 one.py
     for j in range(1,5):
       ^
 IndentationError: expected an indented block
+
+
+
+const int sw = 0;
+const int LED =2;
+const int LED2 =16;
+boolean swstate;
+boolean ledstate = HIGH;
+
+
+void setup() {
+  // put your setup code here, to run once:
+pinMode(LED,OUTPUT);
+pinMode(LED2,OUTPUT);
+pinMode(sw,INPUT);
+digitalWrite(LED,ledstate);
+}
+
+void loop() {
+swstate = digitalRead(sw);                   //讀取按鈕狀態
+
+if(swstate==LOW)                             //按鈕按下
+{
+  ledstate=!ledstate;                        //ledstate改變反向狀態
+
+  digitalWrite(LED,ledstate);                //輸出至LED
+  digitalWrite(LED2,!ledstate);                //輸出至LED2
+  delay(20);                                 //防止按鈕彈跳
+  while(1)                                   //按鈕鎖定的WHILE程式
+  {
+    swstate = digitalRead(sw);
+    if(swstate == HIGH)break;
+  }
+  delay(20);                                 //防止按鈕彈跳
+}
+}
